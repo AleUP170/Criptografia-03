@@ -34,10 +34,10 @@ def feistel(perm, subk):
 
     # Mezclar con subkey
     mix = int(rightPer, base=2)^int(subk, base=2)
-    mix = "{0:04b}".format(mix) # Cambiar a int
+    mix = "{0:08b}".format(mix) # Cambiar a int
 
     # Sacar valores de las s-boxes
-    svalues = sbox1[int(mix[0]+mix[3], base = 2)][int(mix[1]+mix[2], base = 2)]+ sbox2[int(mix[0]+mix[3], base = 2)][int(mix[1]+mix[2], base = 2)]
+    svalues = sbox1[int(mix[0]+mix[3], base = 2)][int(mix[1]+mix[2], base = 2)]+ sbox2[int(mix[4]+mix[7], base = 2)][int(mix[5]+mix[6], base = 2)]
     svalues = svalues[1]+svalues[3]+svalues[2]+svalues[0]
 
     # Mezclar parte izq son svalues
