@@ -59,6 +59,7 @@ def algSDES(mode, key, text):
         perm = feistel(perm, sk2)
         perm = perm[4]+perm[5]+perm[6]+perm[7]+perm[0]+perm[1]+perm[2]+perm[3] # Cambiar izq por der
         perm = feistel(perm, sk1)
+    perm = permut(perm,1) # Perm Inicial
     return perm
 
 # Obtener las llaves y texto plano, limpiando el input
